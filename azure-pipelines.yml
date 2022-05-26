@@ -56,3 +56,9 @@ steps:
     ArtifactName: '$(Build.BuildId)-tfplan'
     publishLocation: 'Container'
     displayName: 'Publish Plan Artifact' 
+
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: $(AzureConnector)
